@@ -15,7 +15,7 @@ const App = () => {
     setLista([...lista, input]);
     setInput("");
   };
-  const excluirItem = (index) => {
+  const handleDelete = (index) => {
     let tmpArray = [...lista];
     tmpArray.splice(index, 1);
     setLista(tmpArray);
@@ -58,7 +58,7 @@ const App = () => {
                   style={{ width: "100%", wordWrap: "break-word" }}
                 />
                 <Button
-                  onClick={() => excluirItem(index)}
+                  onClick={() => handleDelete(index)}
                   color="error"
                   variant="contained"
                   size="small"

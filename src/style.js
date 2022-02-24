@@ -8,6 +8,7 @@ export const Container = styled.section`
     justify-content: center;
     align-items: center;
     @media screen and (max-width: 768px){
+        margin: 50px auto;
         width: 90%;
     }
     h1{
