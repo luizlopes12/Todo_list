@@ -4,7 +4,6 @@ import { Button, TextField, List, ListItem, ListItemText } from "@mui/material";
 import { Container, ListContainer } from "./style";
 
 const App = () => {
-  console.log(localStorage.lista.split(','))
   const [lista, setLista] = useState(localStorage.lista && localStorage.lista.split(','));
   const [input, setInput] = useState("");
   localStorage.lista = [...lista]
