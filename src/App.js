@@ -7,7 +7,6 @@ import {
         ListItem,
         ListItemText,
       } from '@mui/material'
-import { DeleteIcon } from '@mui/icons-material'
 import {Container, ListContainer} from './style'
 
 const App = () =>{
@@ -33,12 +32,13 @@ const App = () =>{
   return (
     <Container>
       <GlobalStyle />
+      <h1>O que vamos fazer hoje?</h1>
       <form onSubmit={formSubmit}>
         <TextField 
+          style={{width: '100%'}}
           size='small'
           onChange={handleChange} 
           value={input} 
-          
           />
         <Button variant="contained" color="success" onClick={input.length > 0 && handleAdd}>Adicionar</Button>
       </form>
@@ -47,8 +47,8 @@ const App = () =>{
           lista.map((item, index) => (
           <List key={index}>
             <ListItem disablePadding>
-              <ListItemText primary={item}/>
-                <Button onClick={()=>excluirItem(index)} color='error' variant='contained' size='small'><DeleteIcon/></Button>
+              <ListItemText primary={item} style={{width: '100%', wordWrap: 'break-word'}}/>
+                <Button onClick={()=>excluirItem(index)}  color='error' variant='contained' size='small'>Excluir</Button>
             </ListItem>
           </List>
           ))}

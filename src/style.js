@@ -3,20 +3,25 @@ import styled from "styled-components";
 export const Container = styled.section`
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 50vh;
-    margin: auto;
+    width: 30%;
+    margin: 100px auto;
     justify-content: center;
     align-items: center;
+    @media screen and (max-width: 768px){
+        width: 90%;
+    }
+    h1{
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
     form{
         display: flex;
         justify-content: space-between;
-        width: 400px;
+        width: 100%;
     }
-    
 `;
 
 export const ListContainer = styled.div`
-    width: 400px;
+    width: 100%;
     margin: 0 auto;
 `;
