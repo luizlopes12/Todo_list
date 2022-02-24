@@ -1,11 +1,11 @@
-import {BrowserRouter} from 'react-router-dom';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import { GlobalStyle } from "./global/GlobalStyle";
 import { useState } from "react";
 import { Button, TextField, List, ListItem, ListItemText } from "@mui/material";
 import { Container, ListContainer } from "./style";
 
 const App = () => {
-  const [lista, setLista] = useState(localStorage.lista && localStorage.lista.split(','));
+  const [lista, setLista] = useState(localStorage.lista ? localStorage.lista.split(',') : []);
   const [input, setInput] = useState("");
   localStorage.lista = [...lista]
   const handleChange = (e) => {
@@ -26,6 +26,8 @@ const App = () => {
 
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <Routes>
+    <Route path='/' element={
     <Container>
       <GlobalStyle />
       <h1>O que vamos fazer hoje?</h1>
@@ -47,7 +49,7 @@ const App = () => {
         </Button>
       </form>
       <ListContainer>
-        {lista &&
+        {lista.length > 0 &&
           lista.map((item, index) => (
             <List key={index}>
               <ListItem disablePadding style={{borderBottom: '2px solid #c0c0c069', padding: '2px'}}>
@@ -68,6 +70,8 @@ const App = () => {
           ))}
       </ListContainer>
     </Container>
+    }/>
+    </Routes>
     </BrowserRouter>
 
   );
