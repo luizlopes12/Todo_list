@@ -1,6 +1,16 @@
 import { GlobalStyle } from "./global/GlobalStyle";
 import { useState } from "react";
-function App() {
+import {
+        Button, 
+        TextField,
+        List,
+        ListItem,
+        ListItemText,
+      } from '@mui/material'
+import { DeleteIcon } from '@mui/icons-material'
+import {Container, ListContainer} from './style'
+
+const App = () =>{
   const [lista, setLista] = useState([]);
   const [input, setInput] = useState("");
 
@@ -21,22 +31,30 @@ function App() {
     setLista(tmpArray);
   };
   return (
-    <>
+    <Container>
       <GlobalStyle />
       <form onSubmit={formSubmit}>
-        <input onChange={handleChange} value={input} />
-        <button onClick={handleAdd}>Adicionar</button>
+        <TextField 
+          size='small'
+          onChange={handleChange} 
+          value={input} 
+          
+          />
+        <Button variant="contained" color="success" onClick={input.length > 0 && handleAdd}>Adicionar</Button>
       </form>
-      <ul>
+      <ListContainer>
         {lista &&
           lista.map((item, index) => (
-            <li key={index}>
-              {item}
-              <button onClick={()=>excluirItem(index)}>Excluir</button>
-            </li>
+          <List key={index}>
+            <ListItem disablePadding>
+              <ListItemText primary={item}/>
+                <Button onClick={()=>excluirItem(index)} color='error' variant='contained' size='small'><DeleteIcon/></Button>
+            </ListItem>
+          </List>
           ))}
-      </ul>
-    </>
+      </ListContainer>
+
+    </Container>
   );
 }
 
