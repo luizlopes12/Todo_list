@@ -4,8 +4,10 @@ import { Button, TextField, List, ListItem, ListItemText } from "@mui/material";
 import { Container, ListContainer } from "./style";
 
 const App = () => {
-  const [lista, setLista] = useState([]);
+  console.log(localStorage.lista.split(','))
+  const [lista, setLista] = useState(localStorage.lista && localStorage.lista.split(','));
   const [input, setInput] = useState("");
+  localStorage.lista = [...lista]
   const handleChange = (e) => {
     setInput(e.target.value);
   };
@@ -47,7 +49,7 @@ const App = () => {
         {lista &&
           lista.map((item, index) => (
             <List key={index}>
-              <ListItem disablePadding style={{borderBottom: '2px solid #000'}}>
+              <ListItem disablePadding style={{borderBottom: '2px solid #c0c0c069', padding: '2px'}}>
                 <ListItemText
                   primary={item}
                   style={{ width: "100%", wordWrap: "break-word" }}
