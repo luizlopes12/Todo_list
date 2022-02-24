@@ -1,5 +1,5 @@
 import { GlobalStyle } from "./global/GlobalStyle";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
         Button, 
         TextField,
@@ -15,7 +15,6 @@ const App = () =>{
 
   const handleChange = (e) => {
     setInput(e.target.value);
-    console.log(input);
   };
   const handleAdd = () => {
     setLista([...lista, input]);
@@ -36,11 +35,17 @@ const App = () =>{
       <form onSubmit={formSubmit}>
         <TextField 
           style={{width: '100%'}}
+          label="Tarefa"
           size='small'
           onChange={handleChange} 
           value={input} 
           />
-        <Button variant="contained" color="success" onClick={input.length > 0 && handleAdd}>Adicionar</Button>
+        <Button
+         variant="contained"
+          color="success"
+          onClick={input.length > 0 ? handleAdd : undefined}
+          onKeyPress={(e) =>(e.key == 'Enter' && handleAdd)}
+          >Adicionar</Button>
       </form>
       <ListContainer>
         {lista &&

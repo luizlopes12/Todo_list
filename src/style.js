@@ -11,8 +11,9 @@ export const Container = styled.section`
         width: 90%;
     }
     h1{
-        font-size: 2em;
+        font-size: 1.5em;
         margin-bottom: 20px;
+        color: #114B5F;
     }
     form{
         display: flex;
