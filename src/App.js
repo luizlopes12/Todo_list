@@ -1,3 +1,4 @@
+import {BrowserRouter} from 'react-router-dom';
 import { GlobalStyle } from "./global/GlobalStyle";
 import { useState } from "react";
 import { Button, TextField, List, ListItem, ListItemText } from "@mui/material";
@@ -24,6 +25,7 @@ const App = () => {
   };
 
   return (
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Container>
       <GlobalStyle />
       <h1>O que vamos fazer hoje?</h1>
@@ -66,6 +68,8 @@ const App = () => {
           ))}
       </ListContainer>
     </Container>
+    </BrowserRouter>
+
   );
 };
 
