@@ -47,7 +47,7 @@ const App = () => {
         {lista &&
           lista.map((item, index) => (
             <List key={index}>
-              <ListItem disablePadding>
+              <ListItem disablePadding style={{borderBottom: '2px solid #000'}}>
                 <ListItemText
                   primary={item}
                   style={{ width: "100%", wordWrap: "break-word" }}
