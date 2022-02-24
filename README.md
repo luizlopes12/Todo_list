@@ -7,5 +7,6 @@
 
 - React
 - Material ui
+- Local storage para armazenar os dados
 - Styled Components
 - Responsividade
