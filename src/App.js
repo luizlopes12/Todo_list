@@ -1,7 +1,6 @@
 import { GlobalStyle } from "./global/GlobalStyle";
 import { useState } from "react";
 import { Button, TextField, List, ListItem, ListItemText } from "@mui/material";
-
 import { Container, ListContainer } from "./style";
 
 const App = () => {
