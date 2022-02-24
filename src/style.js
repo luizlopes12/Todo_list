@@ -11,9 +11,11 @@ export const Container = styled.section`
         width: 90%;
     }
     h1{
-        font-size: 1.5em;
+        font-size: 2.2em;
         margin-bottom: 20px;
-        color: #114B5F;
+    @media screen and (max-width: 768px){
+        font-size: 1.5em;
+    }
     }
     form{
         display: flex;

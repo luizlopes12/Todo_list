@@ -9,6 +9,6 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Roboto', sans-serif;
     }
     body{
-        background: #E4FDE1;
+        background: #fff;
     }
 `;

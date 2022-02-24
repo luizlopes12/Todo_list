@@ -35,6 +35,7 @@ const App = () =>{
       <form onSubmit={formSubmit}>
         <TextField 
           style={{width: '100%'}}
+          color='secondary'
           label="Tarefa"
           size='small'
           onChange={handleChange} 
@@ -44,7 +45,6 @@ const App = () =>{
          variant="contained"
           color="success"
           onClick={input.length > 0 ? handleAdd : undefined}
-          onKeyPress={(e) =>(e.key == 'Enter' && handleAdd)}
           >Adicionar</Button>
       </form>
       <ListContainer>
